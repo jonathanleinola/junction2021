@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 
 """
-# Grandmas JaGucci
+# Grandma's JaGucci
 """
 
 total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
