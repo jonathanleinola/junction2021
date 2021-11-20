@@ -21,3 +21,7 @@ if menu == "H1":
     st.write(plot1())
 elif menu == "H2":
     st.write(plot2())
+elif menu == "H3":
+    st.write(plot3())
+elif menu == "H4":
+    st.write(plot4())
