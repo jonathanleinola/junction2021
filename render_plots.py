@@ -32,17 +32,8 @@ def plot3():
                      size="total_CO2_for_purchase", color="CategoryL2",
                      hover_name="ProductName", hover_data=['ProductName', 'SpendEUR', 'Quantity',
                      'VendorCity', 'VendorCountry', 'CategoryL1', 'CategoryL2', 'VendorName'],
-                     size_max=60, log_x=True)
+                     size_max=60)
     fig.update_traces(mode='markers', marker=dict(sizeref= 2.*max(bubble_size)/(100**2)))
 
     return fig
 
-def plot4():
-
-
-
-    fig = px.scatter(df3, x="SpendEUR", y="Quantity",
-                     size="SpendEUR", color="ProductId",
-                     hover_name="ProductId", size_max=60)
-
-    return fig
