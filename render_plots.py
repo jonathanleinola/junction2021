@@ -21,7 +21,7 @@ def plot3():
     df3 = df3[df3["SpendEUR"] >= 0]
     df3["SpendEUR"] = df3["SpendEUR"].astype(int)
     fig = px.scatter_geo(df3, locations="VendorCountry", color ="VendorCountry",
-                        hover_name="CategoryL2", size="SpendEUR", hover_data=['SpendEUR', 'Quantity',
+                        hover_name="CategoryL2", size="total_CO2_for_purchase", hover_data=['SpendEUR', 'Quantity',
                      'VendorCity', 'VendorCountry', 'CategoryL1', 'ProductName', 'VendorName'],
                         projection="natural earth")
 

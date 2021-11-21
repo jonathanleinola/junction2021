@@ -23,5 +23,5 @@ right_col.write(plot4())
 left_col.header("Five most polluting processes")
 left_col.write(plot1())
 
-right_col.header("CO2 emissions per kg")
+right_col.header("Emissions on a map")
 right_col.write(plot3())
