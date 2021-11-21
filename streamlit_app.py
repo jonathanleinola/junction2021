@@ -13,15 +13,15 @@ st.set_page_config(layout="wide")
 
 left_col, right_col = st.columns(2)
 
-left_col.header("CO2 emissions per kg")
+left_col.header("CO2 emissions for each product")
 left_col.write(plot2())
 
-right_col.header("CO2 emissions per kg")
+right_col.header("CO2 equivalent kg per 1 euro spent")
 right_col.write(plot4())
 
 
-left_col.header("CO2 emissions per kg")
+left_col.header("Five most polluting processes")
 left_col.write(plot1())
 
 right_col.header("CO2 emissions per kg")
-right_col.write(plot4())
+right_col.write(plot3())

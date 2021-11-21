@@ -17,14 +17,13 @@ def plot4():
 
 def plot3():
     df3 = pd.read_csv("data/preprocessed/spend_data_combined.csv")
-
-    df3['"VendorCountry'] = df3.VendorCountry.apply(lambda x: country_name_to_country_alpha3(country_alpha2_to_country_name(x)))
+    df3['VendorCountry'] = df3.VendorCountry.apply(lambda x: country_name_to_country_alpha3(country_alpha2_to_country_name(x.split()[0])))
     df3 = df3[df3["SpendEUR"] >= 0]
     df3["SpendEUR"] = df3["SpendEUR"].astype(int)
-
     fig = px.scatter_geo(df3, locations="VendorCountry", color ="VendorCountry",
-                     hover_name="CategoryL2", size="SpendEUR",
-                     projection="natural earth")
+                        hover_name="CategoryL2", size="SpendEUR", hover_data=['SpendEUR', 'Quantity',
+                     'VendorCity', 'VendorCountry', 'CategoryL1', 'ProductName', 'VendorName'],
+                        projection="natural earth")
 
     return fig
 
