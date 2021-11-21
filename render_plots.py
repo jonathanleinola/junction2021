@@ -42,5 +42,5 @@ def plot2():
     return fig
 
 def plot1():
-    fig = px.pie(df1.nsmallest(5, ["CO2eq_kg"]), values='CO2eq_kg', names='Process', width=1000, height=500)
+    fig = px.pie(df1.nlargest(5, ["CO2eq_kg"]), values='CO2eq_kg', names='Process', width=1000, height=500)
     return fig
