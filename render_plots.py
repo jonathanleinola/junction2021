@@ -7,12 +7,11 @@ from pycountry_convert import country_alpha2_to_country_name, country_name_to_co
 # Render the data
 df1 = pd.read_csv("data/emission_per_eur.csv")
 df2 = pd.read_csv("data/preprocessed/spend_data_combined.csv")
-
 df4 = pd.read_csv("data/preprocessed/spend_data_combined.csv")
 
 def plot4():
-    fig = px.bar(df4, y='CO2eq_kg', x='Category', width=800, height=800)
-    fig.update_layout(barmode='stack', xaxis={'categoryorder':'total ascending'})
+    fig = px.bar(df4, y='CO2eq_kg', x='CategoryL2')
+    fig.update_layout(barmode='overlay', xaxis={'categoryorder':'max ascending'})
     
     return fig
 
@@ -31,14 +30,14 @@ def plot3():
 
 def plot2():
     bubble_size = []
-    bubble_size = df2.iloc[:, 15]
+    bubble_size = df2.iloc[:, 10]
 
 
     fig = px.scatter(df2, x="Quantity", y="SpendEUR",
                      size="total_CO2_for_purchase", color="CategoryL2",
                      hover_name="ProductName", hover_data=['SpendEUR', 'Quantity',
                      'VendorCity', 'VendorCountry', 'CategoryL1', 'CategoryL2', 'VendorName'],
-                     size_max=60, log_x=True)
+                     size_max=100, log_x=True)
     fig.update_traces(mode='markers', marker=dict(sizeref= 2.*max(bubble_size)/(100**2)))
 
     return fig
